@@ -20,8 +20,8 @@
 import AppHeader from '@/components/AppHeader.vue'
 import AppNavigation from '@/components/AppNavigation.vue'
 import DialogContainer from '@/components/DialogContainer.vue'
-import { ref, onMounted } from 'vue'
 import { useGlobalFontSize } from '@/composables/useGlobalFontSize'
+import { onMounted, ref } from 'vue'
 
 const navigationRef = ref()
 const { initGlobalFontSize } = useGlobalFontSize()
@@ -87,57 +87,113 @@ body.font-size-xl {
 }
 
 /* Typography scaling */
-body.font-size-xs h1, body.font-size-sm h1, body.font-size-md h1, body.font-size-lg h1, body.font-size-xl h1 {
+body.font-size-xs h1,
+body.font-size-sm h1,
+body.font-size-md h1,
+body.font-size-lg h1,
+body.font-size-xl h1 {
   font-size: var(--global-font-size-h1) !important;
 }
 
-body.font-size-xs h2, body.font-size-sm h2, body.font-size-md h2, body.font-size-lg h2, body.font-size-xl h2 {
+body.font-size-xs h2,
+body.font-size-sm h2,
+body.font-size-md h2,
+body.font-size-lg h2,
+body.font-size-xl h2 {
   font-size: var(--global-font-size-h2) !important;
 }
 
-body.font-size-xs h3, body.font-size-sm h3, body.font-size-md h3, body.font-size-lg h3, body.font-size-xl h3 {
+body.font-size-xs h3,
+body.font-size-sm h3,
+body.font-size-md h3,
+body.font-size-lg h3,
+body.font-size-xl h3 {
   font-size: var(--global-font-size-h3) !important;
 }
 
-body.font-size-xs h4, body.font-size-sm h4, body.font-size-md h4, body.font-size-lg h4, body.font-size-xl h4 {
+body.font-size-xs h4,
+body.font-size-sm h4,
+body.font-size-md h4,
+body.font-size-lg h4,
+body.font-size-xl h4 {
   font-size: var(--global-font-size-h4) !important;
 }
 
-body.font-size-xs h5, body.font-size-sm h5, body.font-size-md h5, body.font-size-lg h5, body.font-size-xl h5 {
+body.font-size-xs h5,
+body.font-size-sm h5,
+body.font-size-md h5,
+body.font-size-lg h5,
+body.font-size-xl h5 {
   font-size: var(--global-font-size-h5) !important;
 }
 
-body.font-size-xs h6, body.font-size-sm h6, body.font-size-md h6, body.font-size-lg h6, body.font-size-xl h6 {
+body.font-size-xs h6,
+body.font-size-sm h6,
+body.font-size-md h6,
+body.font-size-lg h6,
+body.font-size-xl h6 {
   font-size: var(--global-font-size-h6) !important;
 }
 
 /* Vuetify component overrides */
-body.font-size-xs .v-btn, body.font-size-sm .v-btn, body.font-size-md .v-btn, body.font-size-lg .v-btn, body.font-size-xl .v-btn {
+body.font-size-xs .v-btn,
+body.font-size-sm .v-btn,
+body.font-size-md .v-btn,
+body.font-size-lg .v-btn,
+body.font-size-xl .v-btn {
   font-size: var(--global-font-size-button) !important;
 }
 
-body.font-size-xs .v-field__input, body.font-size-sm .v-field__input, body.font-size-md .v-field__input, body.font-size-lg .v-field__input, body.font-size-xl .v-field__input {
+body.font-size-xs .v-field__input,
+body.font-size-sm .v-field__input,
+body.font-size-md .v-field__input,
+body.font-size-lg .v-field__input,
+body.font-size-xl .v-field__input {
   font-size: var(--global-font-size-base) !important;
 }
 
-body.font-size-xs .v-list-item-title, body.font-size-sm .v-list-item-title, body.font-size-md .v-list-item-title, body.font-size-lg .v-list-item-title, body.font-size-xl .v-list-item-title {
+body.font-size-xs .v-list-item-title,
+body.font-size-sm .v-list-item-title,
+body.font-size-md .v-list-item-title,
+body.font-size-lg .v-list-item-title,
+body.font-size-xl .v-list-item-title {
   font-size: var(--global-font-size-base) !important;
 }
 
-body.font-size-xs .v-list-item-subtitle, body.font-size-sm .v-list-item-subtitle, body.font-size-md .v-list-item-subtitle, body.font-size-lg .v-list-item-subtitle, body.font-size-xl .v-list-item-subtitle {
+body.font-size-xs .v-list-item-subtitle,
+body.font-size-sm .v-list-item-subtitle,
+body.font-size-md .v-list-item-subtitle,
+body.font-size-lg .v-list-item-subtitle,
+body.font-size-xl .v-list-item-subtitle {
   font-size: var(--global-font-size-caption) !important;
 }
 
-body.font-size-xs .v-data-table th, body.font-size-sm .v-data-table th, body.font-size-md .v-data-table th, body.font-size-lg .v-data-table th, body.font-size-xl .v-data-table th,
-body.font-size-xs .v-data-table td, body.font-size-sm .v-data-table td, body.font-size-md .v-data-table td, body.font-size-lg .v-data-table td, body.font-size-xl .v-data-table td {
+body.font-size-xs .v-data-table th,
+body.font-size-sm .v-data-table th,
+body.font-size-md .v-data-table th,
+body.font-size-lg .v-data-table th,
+body.font-size-xl .v-data-table th,
+body.font-size-xs .v-data-table td,
+body.font-size-sm .v-data-table td,
+body.font-size-md .v-data-table td,
+body.font-size-lg .v-data-table td,
+body.font-size-xl .v-data-table td {
   font-size: var(--global-font-size-sm) !important;
 }
 
-body.font-size-xs .v-card-title, body.font-size-sm .v-card-title, body.font-size-md .v-card-title, body.font-size-lg .v-card-title, body.font-size-xl .v-card-title {
+body.font-size-xs .v-card-title,
+body.font-size-sm .v-card-title,
+body.font-size-md .v-card-title,
+body.font-size-lg .v-card-title,
+body.font-size-xl .v-card-title {
   font-size: var(--global-font-size-h5) !important;
 }
 
-body.font-size-xs .v-card-subtitle, body.font-size-sm .v-card-subtitle, body.font-size-md .v-card-subtitle, body.font-size-lg .v-card-subtitle, body.font-size-xl .v-card-subtitle {
+body.font-size-xs .v-card-subtitle,
+body.font-size-sm .v-card-subtitle,
+body.font-size-md .v-card-subtitle,
+body.font-size-lg .v-card-subtitle,
+body.font-size-xl .v-card-subtitle {
   font-size: var(--global-font-size-caption) !important;
 }
 
@@ -146,7 +202,8 @@ body.font-size-xs .v-card-subtitle, body.font-size-sm .v-card-subtitle, body.fon
   font-size: var(--global-font-size-caption) !important;
 }
 
-.text-body-1, .text-body-2 {
+.text-body-1,
+.text-body-2 {
   font-size: var(--global-font-size-base) !important;
 }
 </style>

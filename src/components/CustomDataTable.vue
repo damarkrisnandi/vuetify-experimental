@@ -25,59 +25,27 @@
     <!-- Table Controls -->
     <v-row class="mb-4">
       <v-col cols="12" md="3">
-        <v-text-field
-          v-model="search"
-          prepend-inner-icon="mdi-magnify"
-          label="Search"
-          variant="outlined"
-          density="compact"
-          clearable
-          @input="searchItems"
-        />
+        <v-text-field v-model="search" prepend-inner-icon="mdi-magnify" label="Search" variant="outlined"
+          density="compact" clearable @input="searchItems" />
       </v-col>
-      
+
       <v-col cols="12" md="2">
-        <v-select
-          v-model="itemsPerPage"
-          :items="itemsPerPageOptions"
-          label="Items per page"
-          variant="outlined"
-          density="compact"
-          @update:model-value="updateItemsPerPage"
-        />
+        <v-select v-model="itemsPerPage" :items="itemsPerPageOptions" label="Items per page" variant="outlined"
+          density="compact" @update:model-value="updateItemsPerPage" />
       </v-col>
 
       <v-col cols="12" md="3">
-        <v-select
-          v-model="selectedColumns"
-          :items="availableColumns"
-          label="Show Columns"
-          variant="outlined"
-          density="compact"
-          multiple
-          chips
-          closable-chips
-        />
+        <v-select v-model="selectedColumns" :items="availableColumns" label="Show Columns" variant="outlined"
+          density="compact" multiple chips closable-chips />
       </v-col>
 
       <v-col cols="12" md="2">
-        <v-select
-          v-model="density"
-          :items="densityOptions"
-          label="Table Density"
-          variant="outlined"
-          density="compact"
-          @update:model-value="updateDensity"
-        />
+        <v-select v-model="density" :items="densityOptions" label="Table Density" variant="outlined" density="compact"
+          @update:model-value="updateDensity" />
       </v-col>
 
       <v-col cols="12" md="2">
-        <v-btn
-          color="primary"
-          prepend-icon="mdi-refresh"
-          @click="refreshData"
-          block
-        >
+        <v-btn color="primary" prepend-icon="mdi-refresh" @click="refreshData" block>
           Refresh
         </v-btn>
       </v-col>
@@ -85,20 +53,9 @@
 
     <!-- Data Table -->
     <v-card>
-      <v-data-table-server
-        v-model:items-per-page="itemsPerPage"
-        v-model:sort-by="sortBy"
-        v-model:page="page"
-        :headers="filteredHeaders"
-        :items="serverItems"
-        :items-length="totalItems"
-        :loading="loading"
-        :search="search"
-        :density="density"
-        class="custom-table elevation-1"
-        item-value="id"
-        @update:options="loadItems"
-      >
+      <v-data-table-server v-model:items-per-page="itemsPerPage" v-model:sort-by="sortBy" v-model:page="page"
+        :headers="filteredHeaders" :items="serverItems" :items-length="totalItems" :loading="loading" :search="search"
+        :density="density" class="custom-table elevation-1" item-value="id" @update:options="loadItems">
         <!-- Custom header slots -->
         <template v-slot:header.actions>
           <v-icon>mdi-cog</v-icon>
@@ -118,21 +75,13 @@
         </template>
 
         <template v-slot:item.status="{ item }">
-          <v-chip
-            :color="getStatusColor(item.status)"
-            size="small"
-            variant="tonal"
-          >
+          <v-chip :color="getStatusColor(item.status)" size="small" variant="tonal">
             {{ item.status }}
           </v-chip>
         </template>
 
         <template v-slot:item.role="{ item }">
-          <v-chip
-            :color="getRoleColor(item.role)"
-            size="small"
-            variant="outlined"
-          >
+          <v-chip :color="getRoleColor(item.role)" size="small" variant="outlined">
             {{ item.role }}
           </v-chip>
         </template>
@@ -151,25 +100,9 @@
 
         <template v-slot:item.actions="{ item }">
           <div class="d-flex ga-1">
-            <v-btn
-              icon="mdi-eye"
-              size="small"
-              variant="text"
-              @click="viewItem(item)"
-            />
-            <v-btn
-              icon="mdi-pencil"
-              size="small"
-              variant="text"
-              @click="editItem(item)"
-            />
-            <v-btn
-              icon="mdi-delete"
-              size="small"
-              variant="text"
-              color="error"
-              @click="deleteItem(item)"
-            />
+            <v-btn icon="mdi-eye" size="small" variant="text" @click="viewItem(item)" />
+            <v-btn icon="mdi-pencil" size="small" variant="text" @click="editItem(item)" />
+            <v-btn icon="mdi-delete" size="small" variant="text" color="error" @click="deleteItem(item)" />
           </div>
         </template>
 
@@ -209,7 +142,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useGlobalFontSize } from '../composables/useGlobalFontSize'
 
 // Global font size integration
@@ -306,7 +239,7 @@ const generateMockData = (page: number, itemsPerPage: number, search: string) =>
   // Pagination
   const start = (page - 1) * itemsPerPage
   const end = start + itemsPerPage
-  
+
   return {
     items: filteredData.slice(start, end),
     total: filteredData.length
@@ -316,32 +249,32 @@ const generateMockData = (page: number, itemsPerPage: number, search: string) =>
 // Load data function
 const loadItems = async ({ page, itemsPerPage, sortBy }: any) => {
   loading.value = true
-  
+
   // Simulate API delay
   await new Promise(resolve => setTimeout(resolve, 500))
-  
+
   const { items, total } = generateMockData(page, itemsPerPage, search.value)
-  
+
   // Apply sorting (simplified)
   if (sortBy.length > 0) {
     const sortKey = sortBy[0].key
     const sortOrder = sortBy[0].order
-    
+
     items.sort((a: any, b: any) => {
       let aVal = a[sortKey]
       let bVal = b[sortKey]
-      
+
       if (typeof aVal === 'string') {
         aVal = aVal.toLowerCase()
         bVal = bVal.toLowerCase()
       }
-      
+
       if (aVal < bVal) return sortOrder === 'asc' ? -1 : 1
       if (aVal > bVal) return sortOrder === 'asc' ? 1 : -1
       return 0
     })
   }
-  
+
   serverItems.value = items
   totalItems.value = total
   loading.value = false
@@ -479,7 +412,7 @@ onMounted(() => {
   .custom-table :deep(.v-data-table__td) {
     padding: 8px 4px;
   }
-  
+
   .custom-table :deep(.v-data-table__th) {
     padding: 8px 4px;
   }

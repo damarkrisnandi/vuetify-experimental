@@ -33,39 +33,26 @@
               {{ globalFontRatio }}%
             </v-chip>
           </div>
-          
-          <v-slider
-            :model-value="globalFontRatio"
-            @update:model-value="setGlobalFontRatio"
-            :min="50"
-            :max="200"
-            :step="5"
-            thumb-label="always"
-            color="primary"
-            track-color="grey-lighten-2"
-            class="mb-2"
-          >
+
+          <v-slider :model-value="globalFontRatio" @update:model-value="setGlobalFontRatio" :min="50" :max="200"
+            :step="5" thumb-label="always" color="primary" track-color="grey-lighten-2" class="mb-2">
             <template v-slot:thumb-label="{ modelValue }">
               {{ modelValue }}%
             </template>
           </v-slider>
-          
+
           <div class="d-flex justify-space-between text-caption text-medium-emphasis">
             <span>50% (Smaller)</span>
             <span>100% (Default)</span>
             <span>200% (Larger)</span>
           </div>
-          
+
           <!-- Preset ratio buttons -->
           <div class="d-flex gap-2 mt-2">
-            <v-btn
-              v-for="ratio in [75, 100, 125, 150]"
-              :key="ratio"
+            <v-btn v-for="ratio in [75, 100, 125, 150]" :key="ratio"
               :variant="globalFontRatio === ratio ? 'flat' : 'outlined'"
-              :color="globalFontRatio === ratio ? 'primary' : 'default'"
-              size="small"
-              @click="setGlobalFontRatio(ratio)"
-            >
+              :color="globalFontRatio === ratio ? 'primary' : 'default'" size="small"
+              @click="setGlobalFontRatio(ratio)">
               {{ ratio }}%
             </v-btn>
           </div>
@@ -113,7 +100,7 @@
           <v-alert type="info" variant="tonal" class="text-body-2">
             <div class="font-weight-medium mb-1">{{ currentFontSizeInfo.description }}</div>
             <div class="text-caption">
-              Original: {{ currentFontSizeInfo.baseSize }} • 
+              Original: {{ currentFontSizeInfo.baseSize }} •
               Current: {{ getEffectiveFontSizes.baseSize }}
             </div>
           </v-alert>
@@ -123,8 +110,7 @@
             <div class="font-weight-medium mb-1">Active Ratio: {{ globalFontRatio }}%</div>
             <div class="text-caption">
               Effective Scale: {{ getEffectiveFontSizes.effectiveScale.toFixed(3) }}x •
-              {{ globalFontRatio > 100 ? 'Larger' : globalFontRatio < 100 ? 'Smaller' : 'Default' }}
-            </div>
+              {{ globalFontRatio > 100 ? 'Larger' : globalFontRatio < 100 ? 'Smaller' : 'Default' }} </div>
           </v-alert>
         </v-col>
       </v-row>
@@ -180,12 +166,11 @@
 
     <!-- Quick Actions -->
     <v-card-actions>
-      <v-btn variant="text" prepend-icon="mdi-refresh" @click="resetToDefault" 
+      <v-btn variant="text" prepend-icon="mdi-refresh" @click="resetToDefault"
         :disabled="globalFontSize === 'md' && globalFontRatio === 100">
         Reset All
       </v-btn>
-      <v-btn variant="text" prepend-icon="mdi-restore" @click="resetFontRatio" 
-        :disabled="globalFontRatio === 100">
+      <v-btn variant="text" prepend-icon="mdi-restore" @click="resetFontRatio" :disabled="globalFontRatio === 100">
         Reset Ratio
       </v-btn>
       <v-spacer />

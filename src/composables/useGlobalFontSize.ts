@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { computed, ref } from 'vue'
 
 // Global font size state
 const globalFontSize = ref('md')
@@ -15,7 +15,7 @@ const fontSizeConfig = {
     description: 'Compact view for maximum content density'
   },
   sm: {
-    label: 'Small', 
+    label: 'Small',
     value: 'sm',
     baseSize: '0.875rem',
     scale: 0.9375,
@@ -23,7 +23,7 @@ const fontSizeConfig = {
   },
   md: {
     label: 'Medium',
-    value: 'md', 
+    value: 'md',
     baseSize: '1rem',
     scale: 1,
     description: 'Standard readable size (default)'
@@ -31,7 +31,7 @@ const fontSizeConfig = {
   lg: {
     label: 'Large',
     value: 'lg',
-    baseSize: '1.125rem', 
+    baseSize: '1.125rem',
     scale: 1.125,
     description: 'Larger text for better accessibility'
   },
@@ -51,11 +51,11 @@ export function useGlobalFontSize() {
     const baseScale = config.scale
     const ratioMultiplier = globalFontRatio.value / 100
     const finalScale = baseScale * ratioMultiplier
-    
+
     return {
       '--global-font-size-base': `${parseFloat(config.baseSize) * ratioMultiplier}rem`,
       '--global-font-size-xs': `${0.75 * finalScale}rem`,
-      '--global-font-size-sm': `${0.875 * finalScale}rem`, 
+      '--global-font-size-sm': `${0.875 * finalScale}rem`,
       '--global-font-size-md': `${1 * finalScale}rem`,
       '--global-font-size-lg': `${1.125 * finalScale}rem`,
       '--global-font-size-xl': `${1.25 * finalScale}rem`,
@@ -132,7 +132,7 @@ export function useGlobalFontSize() {
   const applyGlobalFontSize = () => {
     const root = document.documentElement
     const variables = cssVariables.value
-    
+
     Object.entries(variables).forEach(([property, value]) => {
       root.style.setProperty(property, value)
     })
@@ -140,7 +140,7 @@ export function useGlobalFontSize() {
     // Add class to body for additional styling
     document.body.className = document.body.className.replace(/\bfont-size-\w+\b/g, '')
     document.body.classList.add(`font-size-${globalFontSize.value}`)
-    
+
     // Add ratio class for additional styling if needed
     document.body.className = document.body.className.replace(/\bfont-ratio-\w+\b/g, '')
     document.body.classList.add(`font-ratio-${globalFontRatio.value}`)

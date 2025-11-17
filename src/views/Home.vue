@@ -51,8 +51,8 @@
                 Reverse Layout Demo
               </v-btn>
 
-              <v-btn color="orange" size="large" variant="flat" prepend-icon="mdi-table"
-                :to="{ name: 'DataTable' }" block>
+              <v-btn color="orange" size="large" variant="flat" prepend-icon="mdi-table" :to="{ name: 'DataTable' }"
+                block>
                 Data Table Demo
               </v-btn>
 
