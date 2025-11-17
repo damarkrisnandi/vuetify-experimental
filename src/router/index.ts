@@ -39,6 +39,14 @@ const routes: RouteRecordRaw[] = [
     meta: {
       title: 'Two Row Tabs'
     }
+  },
+  {
+    path: '/reverse-layout',
+    name: 'ReverseLayout',
+    component: () => import('@/views/ReverseLayoutShowcase.vue'),
+    meta: {
+      title: 'Reverse Layout'
+    }
   }
 ]
 

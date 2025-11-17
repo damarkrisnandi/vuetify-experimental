@@ -1,39 +1,12 @@
 <template>
   <v-app>
-    <!-- App Bar -->
-    <v-app-bar color="primary" elevation="4">
-      <v-app-bar-title>
-        <v-icon icon="mdi-vuetify" class="mr-2" />
-        Vuetify Experimental
-      </v-app-bar-title>
+    <!-- App Header -->
+    <AppHeader @toggle-drawer="toggleDrawer" />
 
-      <v-spacer />
+    <!-- Collapsible Sidebar Navigation -->
+    <AppNavigation ref="navigationRef" />
 
-      <v-btn
-        :to="{ name: 'Home' }"
-        variant="text"
-        prepend-icon="mdi-home"
-      >
-        Home
-      </v-btn>
-
-      <v-btn
-        :to="{ name: 'Dialogs' }"
-        variant="text"
-        prepend-icon="mdi-message"
-      >
-        Dialogs
-      </v-btn>
-
-      <v-btn
-        :to="{ name: 'Cards' }"
-        variant="text"
-        prepend-icon="mdi-card"
-      >
-        Cards
-      </v-btn>
-    </v-app-bar>
-
+    <!-- Main Content -->
     <v-main>
       <router-view />
     </v-main>
@@ -44,5 +17,17 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import DialogContainer from '@/components/DialogContainer.vue'
+import AppHeader from '@/components/AppHeader.vue'
+import AppNavigation from '@/components/AppNavigation.vue'
+
+const navigationRef = ref()
+
+const toggleDrawer = () => {
+  // Toggle drawer through the navigation component
+  if (navigationRef.value) {
+    navigationRef.value.toggleDrawer()
+  }
+}
 </script>

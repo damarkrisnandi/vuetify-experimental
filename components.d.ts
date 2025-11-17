@@ -11,6 +11,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AppHeader: typeof import('./src/components/AppHeader.vue')['default']
+    AppNavigation: typeof import('./src/components/AppNavigation.vue')['default']
     ComplexDialog: typeof import('./src/components/examples/ComplexDialog.vue')['default']
     ConfirmDialog: typeof import('./src/components/examples/ConfirmDialog.vue')['default']
     CustomizableDialog: typeof import('./src/components/examples/CustomizableDialog.vue')['default']
@@ -20,6 +22,7 @@ declare module 'vue' {
     Level2Dialog: typeof import('./src/components/examples/Level2Dialog.vue')['default']
     Level3Dialog: typeof import('./src/components/examples/Level3Dialog.vue')['default']
     ReusableCard: typeof import('./src/components/ReusableCard.vue')['default']
+    ReverseLayout: typeof import('./src/components/ReverseLayout.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SimpleDialog: typeof import('./src/components/examples/SimpleDialog.vue')['default']

@@ -46,6 +46,11 @@
                 Two Row Tabs Demo
               </v-btn>
 
+              <v-btn color="info" size="large" variant="flat" prepend-icon="mdi-swap-horizontal" :to="{ name: 'ReverseLayout' }"
+                block>
+                Reverse Layout Demo
+              </v-btn>
+
               <v-btn color="secondary" size="large" variant="outlined" prepend-icon="mdi-github"
                 href="https://github.com/vuetifyjs/vuetify" target="_blank" block>
                 Vuetify Documentation
