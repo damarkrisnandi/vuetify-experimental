@@ -4,8 +4,8 @@
  * Vue Router configuration
  */
 
-import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -30,6 +30,14 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/CardShowcase.vue'),
     meta: {
       title: 'Card Showcase'
+    }
+  },
+  {
+    path: '/two-row-tabs',
+    name: 'TwoRowTabs',
+    component: () => import('@/views/TwoRowTabsShowcase.vue'),
+    meta: {
+      title: 'Two Row Tabs'
     }
   }
 ]

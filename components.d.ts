@@ -20,7 +20,10 @@ declare module 'vue' {
     Level2Dialog: typeof import('./src/components/examples/Level2Dialog.vue')['default']
     Level3Dialog: typeof import('./src/components/examples/Level3Dialog.vue')['default']
     ReusableCard: typeof import('./src/components/ReusableCard.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
     SimpleDialog: typeof import('./src/components/examples/SimpleDialog.vue')['default']
+    TwoRowTabs: typeof import('./src/components/TwoRowTabs.vue')['default']
     UserFormDialog: typeof import('./src/components/examples/UserFormDialog.vue')['default']
   }
 }

@@ -36,26 +36,18 @@
             </v-alert>
 
             <div class="d-flex flex-column gap-3">
-              <v-btn
-                color="primary"
-                size="x-large"
-                variant="flat"
-                prepend-icon="mdi-open-in-new"
-                :to="{ name: 'Dialogs' }"
-                block
-              >
+              <v-btn color="primary" size="x-large" variant="flat" prepend-icon="mdi-open-in-new"
+                :to="{ name: 'Dialogs' }" block>
                 View Dialog Showcase
               </v-btn>
 
-              <v-btn
-                color="secondary"
-                size="large"
-                variant="outlined"
-                prepend-icon="mdi-github"
-                href="https://github.com/vuetifyjs/vuetify"
-                target="_blank"
-                block
-              >
+              <v-btn color="success" size="large" variant="flat" prepend-icon="mdi-tab" :to="{ name: 'TwoRowTabs' }"
+                block>
+                Two Row Tabs Demo
+              </v-btn>
+
+              <v-btn color="secondary" size="large" variant="outlined" prepend-icon="mdi-github"
+                href="https://github.com/vuetifyjs/vuetify" target="_blank" block>
                 Vuetify Documentation
               </v-btn>
             </div>
