@@ -47,6 +47,22 @@ const routes: RouteRecordRaw[] = [
     meta: {
       title: 'Reverse Layout'
     }
+  },
+  {
+    path: '/data-table',
+    name: 'DataTable',
+    component: () => import('@/views/DataTableShowcase.vue'),
+    meta: {
+      title: 'Data Table'
+    }
+  },
+  {
+    path: '/font-size',
+    name: 'FontSize',
+    component: () => import('@/views/FontSizeShowcase.vue'),
+    meta: {
+      title: 'Global Font Size'
+    }
   }
 ]
 

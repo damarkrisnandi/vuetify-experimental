@@ -24,6 +24,19 @@
 
                 <v-list-item prepend-icon="mdi-card" title="Card Showcase" value="cards"
                     :to="{ name: 'Cards' }"></v-list-item>
+
+                <v-list-item prepend-icon="mdi-table" title="Data Table" value="datatable"
+                    :to="{ name: 'DataTable' }"></v-list-item>
+            </v-list-group>
+
+            <!-- Settings Group -->
+            <v-list-group value="settings">
+                <template v-slot:activator="{ props }">
+                    <v-list-item v-bind="props" prepend-icon="mdi-cog" title="Settings"></v-list-item>
+                </template>
+
+                <v-list-item prepend-icon="mdi-format-size" title="Global Font Size" value="fontsize"
+                    :to="{ name: 'FontSize' }"></v-list-item>
             </v-list-group>
 
             <!-- Layout Group -->
