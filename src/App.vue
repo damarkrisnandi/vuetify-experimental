@@ -10,17 +10,17 @@
     <v-main>
       <router-view />
     </v-main>
-    
+
     <!-- Dialog Container - Required for DialogService -->
     <DialogContainer />
   </v-app>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import DialogContainer from '@/components/DialogContainer.vue'
 import AppHeader from '@/components/AppHeader.vue'
 import AppNavigation from '@/components/AppNavigation.vue'
+import DialogContainer from '@/components/DialogContainer.vue'
+import { ref } from 'vue'
 
 const navigationRef = ref()
 

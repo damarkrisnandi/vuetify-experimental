@@ -46,8 +46,8 @@
                 Two Row Tabs Demo
               </v-btn>
 
-              <v-btn color="info" size="large" variant="flat" prepend-icon="mdi-swap-horizontal" :to="{ name: 'ReverseLayout' }"
-                block>
+              <v-btn color="info" size="large" variant="flat" prepend-icon="mdi-swap-horizontal"
+                :to="{ name: 'ReverseLayout' }" block>
                 Reverse Layout Demo
               </v-btn>
 
