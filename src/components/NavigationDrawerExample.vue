@@ -10,34 +10,14 @@
     </v-app-bar>
 
     <!-- Navigation Drawer - Disable Swipe Gesture -->
-    <v-navigation-drawer
-      v-model="drawer"
-      :temporary="true"
-      :disable-resize-watcher="true"
-      :disable-route-watcher="true"
-      :touchless="true"
-      location="left"
-      width="280"
-      class="no-swipe-drawer"
-    >
+    <v-navigation-drawer v-model="drawer" :temporary="true" :disable-resize-watcher="true" :disable-route-watcher="true"
+      :touchless="true" location="left" width="280" class="no-swipe-drawer">
       <v-list density="compact" nav>
-        <v-list-item
-          prepend-icon="mdi-view-dashboard"
-          title="Dashboard"
-          value="dashboard"
-        ></v-list-item>
-        
-        <v-list-item
-          prepend-icon="mdi-account"
-          title="Profile"
-          value="profile"
-        ></v-list-item>
-        
-        <v-list-item
-          prepend-icon="mdi-cog"
-          title="Settings"
-          value="settings"
-        ></v-list-item>
+        <v-list-item prepend-icon="mdi-view-dashboard" title="Dashboard" value="dashboard"></v-list-item>
+
+        <v-list-item prepend-icon="mdi-account" title="Profile" value="profile"></v-list-item>
+
+        <v-list-item prepend-icon="mdi-cog" title="Settings" value="settings"></v-list-item>
       </v-list>
 
       <v-divider class="my-3"></v-divider>
@@ -45,20 +25,11 @@
       <v-list density="compact" nav>
         <v-list-group value="Products">
           <template v-slot:activator="{ props }">
-            <v-list-item
-              v-bind="props"
-              prepend-icon="mdi-package-variant"
-              title="Products"
-            ></v-list-item>
+            <v-list-item v-bind="props" prepend-icon="mdi-package-variant" title="Products"></v-list-item>
           </template>
 
-          <v-list-item
-            v-for="product in products"
-            :key="product.id"
-            :title="product.name"
-            :value="product.id"
-            class="pl-8"
-          >
+          <v-list-item v-for="product in products" :key="product.id" :title="product.name" :value="product.id"
+            class="pl-8">
             <template v-slot:prepend>
               <v-icon>{{ product.icon }}</v-icon>
             </template>
@@ -67,20 +38,10 @@
 
         <v-list-group value="Reports">
           <template v-slot:activator="{ props }">
-            <v-list-item
-              v-bind="props"
-              prepend-icon="mdi-chart-bar"
-              title="Reports"
-            ></v-list-item>
+            <v-list-item v-bind="props" prepend-icon="mdi-chart-bar" title="Reports"></v-list-item>
           </template>
 
-          <v-list-item
-            v-for="report in reports"
-            :key="report.id"
-            :title="report.name"
-            :value="report.id"
-            class="pl-8"
-          >
+          <v-list-item v-for="report in reports" :key="report.id" :title="report.name" :value="report.id" class="pl-8">
             <template v-slot:prepend>
               <v-icon>{{ report.icon }}</v-icon>
             </template>
@@ -91,27 +52,14 @@
       <v-divider class="my-3"></v-divider>
 
       <v-list density="compact" nav>
-        <v-list-item
-          prepend-icon="mdi-help-circle"
-          title="Help & Support"
-          value="help"
-        ></v-list-item>
-        
-        <v-list-item
-          prepend-icon="mdi-logout"
-          title="Logout"
-          value="logout"
-        ></v-list-item>
+        <v-list-item prepend-icon="mdi-help-circle" title="Help & Support" value="help"></v-list-item>
+
+        <v-list-item prepend-icon="mdi-logout" title="Logout" value="logout"></v-list-item>
       </v-list>
 
       <template v-slot:append>
         <div class="pa-4">
-          <v-btn
-            block
-            color="primary"
-            variant="outlined"
-            @click="drawer = false"
-          >
+          <v-btn block color="primary" variant="outlined" @click="drawer = false">
             <v-icon start>mdi-close</v-icon>
             Close Menu
           </v-btn>
@@ -124,20 +72,16 @@
       <v-container fluid>
         <v-row>
           <v-col cols="12">
-            <v-alert
-              type="info"
-              variant="tonal"
-              prominent
-              border="start"
-              icon="mdi-information"
-            >
+            <v-alert type="info" variant="tonal" prominent border="start" icon="mdi-information">
               <v-alert-title class="text-h6 mb-2">Drawer Behavior</v-alert-title>
               <div class="text-body-2">
                 <ul class="ml-4">
-                  <li><strong>Swipe gesture disabled:</strong> Drawer tidak dapat dibuka dengan swipe gesture di mobile</li>
+                  <li><strong>Swipe gesture disabled:</strong> Drawer tidak dapat dibuka dengan swipe gesture di mobile
+                  </li>
                   <li><strong>Button only:</strong> Drawer hanya bisa dibuka/ditutup melalui tombol menu di app bar</li>
                   <li><strong>Temporary mode:</strong> Drawer akan menutup otomatis saat click di luar area drawer</li>
-                  <li><strong>No auto-open:</strong> Resize dan route changes tidak akan membuka drawer secara otomatis</li>
+                  <li><strong>No auto-open:</strong> Resize dan route changes tidak akan membuka drawer secara otomatis
+                  </li>
                 </ul>
               </div>
             </v-alert>
@@ -161,7 +105,7 @@
                     <v-list-item-title><code>:touchless="true"</code></v-list-item-title>
                     <v-list-item-subtitle>Disable touch swipe gesture untuk membuka drawer</v-list-item-subtitle>
                   </v-list-item>
-                  
+
                   <v-list-item>
                     <template v-slot:prepend>
                       <v-icon color="success">mdi-check-circle</v-icon>
@@ -169,7 +113,7 @@
                     <v-list-item-title><code>:temporary="true"</code></v-list-item-title>
                     <v-list-item-subtitle>Drawer menutup saat click di luar area</v-list-item-subtitle>
                   </v-list-item>
-                  
+
                   <v-list-item>
                     <template v-slot:prepend>
                       <v-icon color="success">mdi-check-circle</v-icon>
@@ -177,7 +121,7 @@
                     <v-list-item-title><code>:disable-resize-watcher="true"</code></v-list-item-title>
                     <v-list-item-subtitle>Tidak auto-open saat resize window</v-list-item-subtitle>
                   </v-list-item>
-                  
+
                   <v-list-item>
                     <template v-slot:prepend>
                       <v-icon color="success">mdi-check-circle</v-icon>
@@ -185,7 +129,7 @@
                     <v-list-item-title><code>:disable-route-watcher="true"</code></v-list-item-title>
                     <v-list-item-subtitle>Tidak auto-open saat route berubah</v-list-item-subtitle>
                   </v-list-item>
-                  
+
                   <v-list-item>
                     <template v-slot:prepend>
                       <v-icon color="success">mdi-check-circle</v-icon>
@@ -207,37 +151,19 @@
               <v-card-text>
                 <v-row>
                   <v-col cols="12">
-                    <v-btn
-                      block
-                      size="large"
-                      color="primary"
-                      prepend-icon="mdi-menu-open"
-                      @click="toggleDrawer"
-                    >
+                    <v-btn block size="large" color="primary" prepend-icon="mdi-menu-open" @click="toggleDrawer">
                       Toggle Drawer
                     </v-btn>
                   </v-col>
-                  
+
                   <v-col cols="12">
-                    <v-btn
-                      block
-                      size="large"
-                      color="success"
-                      prepend-icon="mdi-menu"
-                      @click="drawer = true"
-                    >
+                    <v-btn block size="large" color="success" prepend-icon="mdi-menu" @click="drawer = true">
                       Open Drawer
                     </v-btn>
                   </v-col>
-                  
+
                   <v-col cols="12">
-                    <v-btn
-                      block
-                      size="large"
-                      color="error"
-                      prepend-icon="mdi-close"
-                      @click="drawer = false"
-                    >
+                    <v-btn block size="large" color="error" prepend-icon="mdi-close" @click="drawer = false">
                       Close Drawer
                     </v-btn>
                   </v-col>
@@ -246,11 +172,7 @@
                 <v-divider class="my-4"></v-divider>
 
                 <div class="text-center">
-                  <v-chip
-                    :color="drawer ? 'success' : 'error'"
-                    size="large"
-                    label
-                  >
+                  <v-chip :color="drawer ? 'success' : 'error'" size="large" label>
                     <v-icon start>{{ drawer ? 'mdi-check' : 'mdi-close' }}</v-icon>
                     Drawer Status: {{ drawer ? 'OPEN' : 'CLOSED' }}
                   </v-chip>
@@ -279,7 +201,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { computed, ref } from 'vue'
 
 // State
 const drawer = ref(false)
