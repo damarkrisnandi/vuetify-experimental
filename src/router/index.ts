@@ -63,6 +63,30 @@ const routes: RouteRecordRaw[] = [
     meta: {
       title: 'Global Font Size'
     }
+  },
+  {
+    path: '/scrollable-chips',
+    name: 'ScrollableChips',
+    component: () => import('@/views/ScrollableChipsShowcase.vue'),
+    meta: {
+      title: 'Scrollable Chips'
+    }
+  },
+  {
+    path: '/profile-table',
+    name: 'ProfileTable',
+    component: () => import('@/views/ProfileTableShowcase.vue'),
+    meta: {
+      title: 'Responsive Profile Table'
+    }
+  },
+  {
+    path: '/tabs-scrollable',
+    name: 'TabsScrollable',
+    component: () => import('@/views/TabsScrollableShowcase.vue'),
+    meta: {
+      title: 'Tabs with Scrollable Tables'
+    }
   }
 ]
 

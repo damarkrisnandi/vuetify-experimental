@@ -65,7 +65,7 @@
           <v-card variant="outlined" class="preview-card">
             <v-card-title class="text-subtitle-1">Live Preview</v-card-title>
             <v-card-text>
-              <div class="font-preview">
+              <div class="font-preview position-relative">
                 <h1 class="preview-h1">Heading 1 Text</h1>
                 <h2 class="preview-h2">Heading 2 Text</h2>
                 <h3 class="preview-h3">Heading 3 Text</h3>
@@ -74,6 +74,19 @@
                   You can see how it affects readability and space usage.
                 </p>
                 <div class="preview-caption">Caption text and small details</div>
+
+                <!-- Absolute positioned card inside preview div -->
+                <v-card class="absolute-card" elevation="4" variant="elevated">
+                  <v-card-text class="pa-2">
+                    <div class="text-caption font-weight-medium">
+                      <v-icon start size="small">mdi-information</v-icon>
+                      Live Preview
+                    </div>
+                    <div class="text-body-2 mt-1">
+                      Ratio: {{ globalFontRatio }}%
+                    </div>
+                  </v-card-text>
+                </v-card>
 
                 <!-- Button Preview -->
                 <div class="mt-3">
@@ -246,6 +259,20 @@ const resetToDefault = () => {
 
 .font-preview {
   line-height: var(--global-line-height, 1.4);
+  position: relative;
+  min-height: 200px;
+}
+
+/* Absolutely positioned card inside preview div */
+.absolute-card {
+  position: absolute !important;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  min-width: 120px;
+  background: rgba(var(--v-theme-surface), 0.95) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(var(--v-theme-primary), 0.2);
 }
 
 .preview-h1 {

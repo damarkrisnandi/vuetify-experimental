@@ -56,6 +56,16 @@
                 Data Table Demo
               </v-btn>
 
+              <v-btn color="teal" size="large" variant="flat" prepend-icon="mdi-account-group"
+                :to="{ name: 'ProfileTable' }" block>
+                Responsive Profile Table
+              </v-btn>
+
+              <v-btn color="cyan" size="large" variant="flat" prepend-icon="mdi-tab-plus"
+                :to="{ name: 'TabsScrollable' }" block>
+                Tabs Scrollable Tables
+              </v-btn>
+
               <v-btn color="purple" size="large" variant="flat" prepend-icon="mdi-format-size"
                 :to="{ name: 'FontSize' }" block>
                 Global Font Size
