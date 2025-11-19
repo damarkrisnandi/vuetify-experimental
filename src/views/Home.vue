@@ -66,6 +66,11 @@
                 Tabs Scrollable Tables
               </v-btn>
 
+              <v-btn color="deep-purple" size="large" variant="flat" prepend-icon="mdi-menu"
+                :to="{ name: 'NavigationDrawer' }" block>
+                Navigation Drawer (No Swipe)
+              </v-btn>
+
               <v-btn color="purple" size="large" variant="flat" prepend-icon="mdi-format-size"
                 :to="{ name: 'FontSize' }" block>
                 Global Font Size

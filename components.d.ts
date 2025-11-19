@@ -23,6 +23,7 @@ declare module 'vue' {
     Level1Dialog: typeof import('./src/components/examples/Level1Dialog.vue')['default']
     Level2Dialog: typeof import('./src/components/examples/Level2Dialog.vue')['default']
     Level3Dialog: typeof import('./src/components/examples/Level3Dialog.vue')['default']
+    NavigationDrawerExample: typeof import('./src/components/NavigationDrawerExample.vue')['default']
     ProfileTable: typeof import('./src/components/ProfileTable.vue')['default']
     ReusableCard: typeof import('./src/components/ReusableCard.vue')['default']
     ReverseLayout: typeof import('./src/components/ReverseLayout.vue')['default']

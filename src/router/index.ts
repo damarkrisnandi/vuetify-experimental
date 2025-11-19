@@ -87,6 +87,14 @@ const routes: RouteRecordRaw[] = [
     meta: {
       title: 'Tabs with Scrollable Tables'
     }
+  },
+  {
+    path: '/navigation-drawer',
+    name: 'NavigationDrawer',
+    component: () => import('@/views/NavigationDrawerShowcase.vue'),
+    meta: {
+      title: 'Navigation Drawer - Button Only'
+    }
   }
 ]
 

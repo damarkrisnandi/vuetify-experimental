@@ -35,6 +35,9 @@
 
         <v-list-item prepend-icon="mdi-tab-plus" title="Tabs Scrollable Tables" value="tabsscrollable"
           :to="{ name: 'TabsScrollable' }"></v-list-item>
+
+        <v-list-item prepend-icon="mdi-menu" title="Navigation Drawer" value="navdrawer"
+          :to="{ name: 'NavigationDrawer' }"></v-list-item>
       </v-list-group>
 
       <!-- Settings Group -->
